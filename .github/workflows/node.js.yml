@@ -11,6 +11,7 @@ on:
 
 jobs:
   build:
+    
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,10 +27,11 @@ jobs:
   test:
     runs-on: ubuntu-lastest
     needs: build
+    
     strategy:
       matrix:
         node-version: [10.x, 12.x]
-        os: [ubuntu-lastest, windows-2016]
+        os: [ubuntu-lastest, windows-lastest]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
